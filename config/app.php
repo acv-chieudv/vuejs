@@ -1,7 +1,11 @@
 <?php
 
 return [
-
+    /**
+     * Developer config
+     */
+    'DEV_MODE'=>env('DEV_MODE', false),//DEV_MODE allow active Module Dev
+    'SKIPS_ACL_MODULE'=>['dev','laravel'],
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -22,7 +26,7 @@ return [
     |
     | This value determines the "environment" your application is currently
     | running in. This may determine how you prefer to configure various
-    | services the application utilizes. Set this in your ".env" file.
+    | services your application utilizes. Set this in your ".env" file.
     |
     */
 
@@ -65,7 +69,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Ho_Chi_Minh',
 
     /*
     |--------------------------------------------------------------------------
@@ -95,19 +99,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Faker Locale
-    |--------------------------------------------------------------------------
-    |
-    | This locale will be used by the Faker PHP library when generating fake
-    | data for your database seeds. For example, this will be used to get
-    | localized telephone numbers, street address information and more.
-    |
-    */
-
-    'faker_locale' => 'en_US',
-
-    /*
-    |--------------------------------------------------------------------------
     | Encryption Key
     |--------------------------------------------------------------------------
     |
@@ -123,7 +114,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Autoloaded Service Providers
+    | Autoloaded Services Providers
     |--------------------------------------------------------------------------
     |
     | The service providers listed here will be automatically loaded on the
@@ -135,7 +126,7 @@ return [
     'providers' => [
 
         /*
-         * Laravel Framework Service Providers...
+         * Laravel Framework Services Providers...
          */
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
@@ -161,18 +152,50 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Package Service Providers...
+         * Application Services Providers...
          */
-
-        /*
-         * Application Service Providers...
-         */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
+        App\Core\Providers\AppServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        App\Core\Providers\EventServiceProvider::class,
+        App\Core\Providers\RouteServiceProvider::class,
+        //Excecl : add at 20180718
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+        /**
+         * custom Provider
+         */
+        /**
+         * DEV module
+         */
+        App\Dev\Providers\DevServiceProvider::class,
+        App\Dev\Providers\RouteServiceProvider::class,
 
+        /**
+         * Auth
+         */
+        App\Auth\Providers\AuthServiceProvider::class,
+        App\Auth\Providers\RouteServiceProvider::class,
+        /**
+         * Acl
+         */
+        App\Acl\Providers\AclServiceProvider::class,
+        App\Acl\Providers\RouteServiceProvider::class,
+
+        /**
+         * API
+         */
+        App\Api\V1\Providers\RouteServiceProvider::class,
+        Laravel\Passport\PassportServiceProvider::class,
+        App\Api\V1\Providers\ApiServiceProvider::class,
+         /**
+          * Backend
+          */
+        App\Backend\Providers\UserServiceProvider::class,
+        App\Backend\Providers\RouteServiceProvider::class,
+        App\Backend\Providers\BackendServiceProvider::class,
+        /**
+         * ImageResize
+         */
+        Intervention\Image\ImageServiceProvider::class,
     ],
 
     /*
@@ -187,7 +210,6 @@ return [
     */
 
     'aliases' => [
-
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
@@ -221,7 +243,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Image' => Intervention\Image\Facades\Image::class
     ],
 
 ];

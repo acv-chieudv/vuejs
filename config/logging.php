@@ -1,7 +1,6 @@
 <?php
 
 use Monolog\Handler\StreamHandler;
-use Monolog\Handler\SyslogUdpHandler;
 
 return [
 
@@ -36,7 +35,7 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['daily'],
+            'channels' => ['my_custom'],
         ],
 
         'single' => [
@@ -49,7 +48,7 @@ return [
             'driver' => 'daily',
             'path' => storage_path('logs/laravel.log'),
             'level' => 'debug',
-            'days' => 14,
+            'days' => 20,
         ],
 
         'slack' => [
@@ -58,16 +57,6 @@ return [
             'username' => 'Laravel Log',
             'emoji' => ':boom:',
             'level' => 'critical',
-        ],
-
-        'papertrail' => [
-            'driver'  => 'monolog',
-            'level' => 'debug',
-            'handler' => SyslogUdpHandler::class,
-            'handler_with' => [
-                'host' => env('PAPERTRAIL_URL'),
-                'port' => env('PAPERTRAIL_PORT'),
-            ],
         ],
 
         'stderr' => [
@@ -87,6 +76,14 @@ return [
             'driver' => 'errorlog',
             'level' => 'debug',
         ],
+        'my_custom' => [
+            'driver' => 'custom',
+            'via' => App\Core\Logging\Custom\CreateCustomLogger::class
+        ],
+        'sql_query' => [
+            'driver' => 'custom',
+            'via' => App\Core\Logging\DatabaseLogs\CreateDatabaseLogger::class
+        ]
     ],
 
 ];

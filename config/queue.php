@@ -7,13 +7,13 @@ return [
     | Default Queue Connection Name
     |--------------------------------------------------------------------------
     |
-    | Laravel's queue API supports an assortment of back-ends via a single
-    | API, giving you convenient access to each back-end using the same
+    | Laravel's queue Api supports an assortment of back-ends via a single
+    | Api, giving you convenient access to each back-end using the same
     | syntax for every one. Here you may define a default connection.
     |
     */
 
-    'default' => env('QUEUE_CONNECTION', 'sync'),
+    'default' => env('QUEUE_DRIVER', 'sync'),
 
     /*
     |--------------------------------------------------------------------------
@@ -60,7 +60,7 @@ return [
         'redis' => [
             'driver' => 'redis',
             'connection' => 'default',
-            'queue' => env('REDIS_QUEUE', 'default'),
+            'queue' => 'default',
             'retry_after' => 90,
             'block_for' => null,
         ],

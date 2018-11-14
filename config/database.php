@@ -2,6 +2,7 @@
 
 return [
 
+    'logs'=> env('DB_LOG', false),
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
@@ -37,7 +38,6 @@ return [
             'driver' => 'sqlite',
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
             'prefix' => '',
-            'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
         'mysql' => [
@@ -51,7 +51,6 @@ return [
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
-            'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
         ],
@@ -65,7 +64,6 @@ return [
             'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
-            'prefix_indexes' => true,
             'schema' => 'public',
             'sslmode' => 'prefer',
         ],
@@ -79,8 +77,22 @@ return [
             'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
-            'prefix_indexes' => true,
         ],
+        //Use for developer
+        'mysql_server_remote_translation' => [
+            'driver' => 'mysql',
+            'host' => env('IMPORT_TRANS_DB_HOST', ''),
+            'port' => env('IMPORT_TRANS_DB_PORT', ''),
+            'database' => env('IMPORT_TRANS_DB_DATABASE', ''),
+            'username' => env('IMPORT_TRANS_DB_USERNAME', ''),
+            'password' => env('IMPORT_TRANS_DB_PASSWORD', ''),
+            'unix_socket' => env('IMPORT_TRANS_DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ]
 
     ],
 
@@ -103,7 +115,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Redis is an open source, fast, and advanced key-value store that also
-    | provides a richer body of commands than a typical key-value system
+    | provides a richer set of commands than a typical key-value systems
     | such as APC or Memcached. Laravel makes it easy to dig right in.
     |
     */
@@ -116,14 +128,7 @@ return [
             'host' => env('REDIS_HOST', '127.0.0.1'),
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', 6379),
-            'database' => env('REDIS_DB', 0),
-        ],
-
-        'cache' => [
-            'host' => env('REDIS_HOST', '127.0.0.1'),
-            'password' => env('REDIS_PASSWORD', null),
-            'port' => env('REDIS_PORT', 6379),
-            'database' => env('REDIS_CACHE_DB', 1),
+            'database' => 0,
         ],
 
     ],
