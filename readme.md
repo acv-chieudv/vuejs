@@ -1,3 +1,33 @@
+<h4>
+Cài đặt laravel cơ bản
+Cài đặt
+    npm install
+    npm install sweetalert2
+    npm install vue-router
+
+
+</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <p><strong>Date: 2018/10/10</strong></p>
 <p><strong>Required:</strong></p>
 <p><strong>&nbsp;-&nbsp; </strong>Laravel framework 5.6</p>
