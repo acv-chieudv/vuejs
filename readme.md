@@ -1,12 +1,12 @@
 <h4>
 Cài đặt laravel cơ bản
-Cài đặt
+Cài đặt</h4>
     <p>npm install</p>
     <p>npm install sweetalert2</p>
     <p>npm install vue-router</p>
 
 
-</h4>
+
 
 
 
