@@ -169,6 +169,13 @@ return [
         App\Dev\Providers\DevServiceProvider::class,
         App\Dev\Providers\RouteServiceProvider::class,
 
+
+        /**
+         * VUE module
+         */
+        App\Vue\Providers\VueServiceProvider::class,
+        App\Vue\Providers\RouteServiceProvider::class,
+
         /**
          * Auth
          */

@@ -11,10 +11,13 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <link  rel="stylesheet" type="text/css" href="{{ asset('css/all.min.css') }}" />
+        <link  rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}" />
+
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                /* color: #636b6f; */
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -76,12 +79,17 @@
                     @endauth
                 </div>
             @endif
+                
+                
 
-            <div class="content">
+                
+                
+            <div class="content" id="app">
                 <div class="title m-b-md">
                     Laravel
                 </div>
-
+                <example-component></example-component>
+                <hr>
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
@@ -91,5 +99,9 @@
                 </div>
             </div>
         </div>
+        <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
+        <script src="{{ asset('js/all.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>

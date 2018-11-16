@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
 use DateTime;
+use DB;
 
 class UserController
 {
@@ -25,6 +26,11 @@ class UserController
     }
     public function getList(){
     	return view("backend.users.list");
+    }
+    public function getUser(){
+        $user = DB::table('users')->get();
+        return $user;
+    	//return view("backend.users.list");
     }
     public function profile(Request $request){
         $diskLocalName = "public";

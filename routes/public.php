@@ -9,9 +9,13 @@
  * Default router config
  * All of router here will skip ACL/Auth check
  */
+// namespace App\Backend\Http\Controllers;
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome'); 
 });
+
+// Route::get('/user', 'UserController@getUser')->name('list_user');
 
 Route::get('/vue_test', function () {
     return view('vue_test');
