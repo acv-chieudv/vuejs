@@ -1,9 +1,9 @@
 <h4>
 Cài đặt laravel cơ bản
 Cài đặt
-    npm install
-    npm install sweetalert2
-    npm install vue-router
+    <p>npm install</p>
+    <p>npm install sweetalert2</p>
+    <p>npm install vue-router</p>
 
 
 </h4>
