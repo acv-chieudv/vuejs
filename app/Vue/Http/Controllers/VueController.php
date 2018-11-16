@@ -61,6 +61,7 @@ class VueController extends BaseController
 
     }
     public function geteditvue($id){
+        
         $user = User::find($id);
         return $user;
     }

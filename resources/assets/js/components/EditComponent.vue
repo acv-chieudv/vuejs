@@ -29,15 +29,17 @@ export default {
         }
     },
     created(){
-
         this.id = this.$route.params.id;
         this.loadUser();
+    },
 
+    watch:{
+        '$route':'loadUser'
     },
 
     methods: {
         loadUser(){
-            axios.get('vue/geteditvue/'+this.id).then(res=>{
+            axios.get('vue/geteditvue/' + this.id).then(res=>{
                 this.user = res.data;
             });
         },
@@ -66,9 +68,7 @@ export default {
         }
     },
 
-    mounted(){
-
-    }
+    
 
 }
 </script>

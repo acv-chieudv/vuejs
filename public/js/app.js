@@ -53546,11 +53546,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     created: function created() {
-
         this.id = this.$route.params.id;
         this.loadUser();
     },
 
+
+    watch: {
+        '$route': 'loadUser'
+    },
 
     methods: {
         loadUser: function loadUser() {
@@ -53577,9 +53580,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 swal('Nooooo!', 'Insert not success', 'error');
             });
         }
-    },
+    }
 
-    mounted: function mounted() {}
 });
 
 /***/ }),
