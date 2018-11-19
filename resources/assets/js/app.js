@@ -11,22 +11,8 @@ window.Vue = require('vue');
 import swal from 'sweetalert2'
 window.swal = swal
 
+import router from './router/router.js';
 
-
-import VueRouter from 'vue-router'
-Vue.use(VueRouter)
-
-
-const routes = [
-    { name:'add',path: '/add',props: true, component: require('./components/AddComponent.vue') },
-    { name:'edit',path: '/edit/:id',props: true, component: require('./components/EditComponent.vue') },
-]
-
-
-
-const router = new VueRouter({
-    routes // short for `routes: routes`
-  })
   
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -39,6 +25,7 @@ Vue.component('list-component', require('./components/ListComponent.vue'));
 Vue.component('add-component', require('./components/AddComponent.vue'));
 Vue.component('edit-component', require('./components/EditComponent.vue'));
 Vue.component('form-component', require('./components/FormComponent.vue'));
+Vue.component('login-component', require('./components/LoginComponent.vue'));
 
 
 

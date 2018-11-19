@@ -10,6 +10,7 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
+                                    <th>STT</th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Create at</th>
@@ -17,7 +18,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="item in list_user" :key="item.id" >
+                                <tr v-for="(item,index) in list_user" :key="item.id" >
+                                    <td>{{ index+1 }}</td>
                                     <td>{{ item.name }}</td>
                                     <td>{{ item.email }}</td>
                                     <td>{{ item.created_at }}</td>

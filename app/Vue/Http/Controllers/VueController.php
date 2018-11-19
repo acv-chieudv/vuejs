@@ -10,11 +10,15 @@ use App\Auth\Models\User;
 use Illuminate\Http\Request;
 use Validator;
 use DateTime;
+use Illuminate\Support\Facades\Config;
 
 class VueController extends BaseController
 {
     public function index()
     {
+        // echo "<pre>";
+        // print_r(Config::get('acl'));
+        // echo "</pre>";
         return view('vue.index');
     }
     public function listvue()

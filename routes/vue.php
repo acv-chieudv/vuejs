@@ -2,6 +2,10 @@
 
 
     Route::get('vue','VueController@index');
+    Route::get('dang-nhap','LoginController@index');
+
+
+    
     Route::group(['prefix'=>'vue'],function(){
         Route::get('listvue','VueController@listvue');
         Route::post('addvue','VueController@addvue');
