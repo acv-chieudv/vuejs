@@ -8,10 +8,12 @@
 require('./bootstrap');
 window.Vue = require('vue');
 
-import swal from 'sweetalert2'
-window.swal = swal
+require('./admin/main');
 
-import router from './router/router.js';
+// import swal from 'sweetalert2'
+// window.swal = swal
+
+//import router from './router/router.js';
 
   
 /**
@@ -20,12 +22,12 @@ import router from './router/router.js';
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('list-component', require('./components/ListComponent.vue'));
-Vue.component('add-component', require('./components/AddComponent.vue'));
-Vue.component('edit-component', require('./components/EditComponent.vue'));
-Vue.component('form-component', require('./components/FormComponent.vue'));
-Vue.component('login-component', require('./components/LoginComponent.vue'));
+// Vue.component('example-component', require('./components/ExampleComponent.vue'));
+// Vue.component('list-component', require('./components/ListComponent.vue'));
+// Vue.component('add-component', require('./components/AddComponent.vue'));
+// Vue.component('edit-component', require('./components/EditComponent.vue'));
+// Vue.component('form-component', require('./components/FormComponent.vue'));
+// Vue.component('login-component', require('./components/LoginComponent.vue'));
 
 
 
@@ -52,15 +54,15 @@ Vue.component('login-component', require('./components/LoginComponent.vue'));
 // window.axios.defaults.headers.common = {
 //     'X-Requested-With': 'XMLHttpRequest',
 // };
-const app = new Vue({
-    el: '#app',
-    state: {
-        user: {
-            userName:'',
-            loggedInStatus: true,
-            authToken: ''
-        }
-    },
-    router
+// const app = new Vue({
+//     el: '#app',
+//     state: {
+//         user: {
+//             userName:'',
+//             loggedInStatus: true,
+//             authToken: ''
+//         }
+//     },
+//     router
 
-});
+// });

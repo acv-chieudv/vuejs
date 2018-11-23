@@ -18,6 +18,15 @@
 </template>
 <script>
 export default {
+    data(){
+        return {
 
+        }
+    },
+    methods:{
+        createUser(){
+            console.log(localStorage);
+        }
+    }
 };
 </script>

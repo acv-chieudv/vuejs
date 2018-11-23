@@ -13,7 +13,8 @@
         "laravel/passport": "^6.0",
         "laravel/tinker": "^1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
-        "maatwebsite/excel": "2.*"
+        "maatwebsite/excel": "2.*",
+        "coreui/coreui-admin-template":"dev-master"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
@@ -22,6 +23,21 @@
         "nunomaduro/collision": "^2.0",
         "phpunit/phpunit": "^7.0"
     },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "coreui/coreui-admin-template",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/coreui/coreui-free-bootstrap-admin-template.git",
+                    "type": "git",
+                    "reference": "24d9a64"
+                }
+
+            }
+        }
+    ],
     "autoload": {
         "classmap": [
             "database/seeds",
